@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+    <link rel="shortcut icon" href="/Home/Img/favicon.png" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&family=Caveat:wght@400..700&family=Cinzel:wght@400..900&family=Gloria+Hallelujah&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lobster&family=Merienda:wght@300..900&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap" rel="stylesheet">
+
+    <!-- icon-link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=call" />
+
+
+   <!-- ---- icon----- -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=queue_music" />
+
+
+    <!-- -----font-awesome-link----- -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <title>Document</title>
+
+    <!-- -----AOS-Link---- -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+</head>
+
+
+    <body class="h-screen overflow-hidden">
+        <div id="loader-wrapper" class="fixed inset-0 flex justify-center items-center bg-white z-50">
+          <div class="w-full h-1 bg-gray-300 relative overflow-hidden">
+            <div class="h-full w-1/12 bg-[#c5a15b] animate-[loader_1.5s_forwards]"></div>
+          </div>
+        </div>
+      
+        <script>
+          document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(() => {
+              document.getElementById('loader-wrapper').style.display = 'none';
+            document.body.classList.remove('h-screen','overflow-hidden')
+            }, 1800);
+          });
+        </script>
+    
+        <style>
+          @keyframes loader {
+            0% { width: 10%; }
+            100% { width: 100%; }
+          }
+        </style>
+
+
+<!-- ----------------Header----------------------- -->
+<header class="flex items-center justify-between px-10 py-4 md:px-24 bg-gray-100 border-b border-gray-300 flex-wrap">
+    
+    <!-- Dark Mode Button -->
+    <div class="dark-mode-btn">
+        <button id="dark-mode-btn" class="bg-transparent"><i class="fa-regular fa-moon text-lg"></i></button>
+    </div>
+    
+    <!-- Logo -->
+    <img src="/Home/Img/logo-default-131x43.png" alt="Logo" class="h-10">
+
+    <!-- Contact Info -->
+    <div class="hidden md:flex items-center space-x-6" id="contactinfo">
+        <div class="flex items-center space-x-2 text-sm">
+            <i class="fa-solid fa-phone text-gold"></i>
+            <span>1-800-1234-567<br>1-800-8763-765</span>
+        </div>
+        <div class="flex items-center space-x-2 text-sm">
+            <i class="fa-solid fa-location-dot text-gold"></i>
+            <span>2130 Fulton Street<br>San Diego, CA 94117-1080</span>
+        </div>
+    </div>
+
+    <!-- Book Lesson Button -->
+    <div class="hidden md:block">
+        <button class="border border-black px-5 py-2 text-sm font-bold uppercase bg-white rounded hover:bg-[#c5a15b] hover:text-black">Book a Lesson</button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="flex space-x-4 md:hidden">
+        <div id="menu-toggle" class="cursor-pointer text-2xl">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div id="menu-toggle2" class="cursor-pointer text-2xl">
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+        </div>
+    </div>
+</header>
+
+<!------------------ Navigation-------- -->
+<nav id="nav" class="hidden md:block bg-[#333333] text-xl w-full">
+    <ul class="flex flex-col md:flex-row items-center justify-center md:justify-center md:pl-16 space-y-4 md:space-y-0 md:space-x-20 py-4">
+        <li><a href="/Home/index.html" class="text-white hover:text-[#c5a15b]">Home</a></li>
+        <li><a href="/About/index.html" class="text-white hover:text-[#c5a15b]">About</a></li>
+        <li><a href="/Classes/index.html" class="text-white hover:text-[#c5a15b]">Classes</a></li>
+        <li><a href="/Teachers/index.html" class="text-white hover:text-[#c5a15b]">Teachers</a></li>
+        <li><a href="/Contact/index.html" class="text-white hover:text-[#c5a15b]">Contacts</a></li>
+        <div class="text-white text-2xl hidden md:block">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+    </ul>
+</nav>
+
+
+<!--------------- Slider-------------- -->
+ <div class="relative w-full overflow-hidden">
+    <div class="flex w-full h-screen items-center justify-center">
+      <div class="relative w-full">
+        <div class="slide hidden w-full">
+          <div class="absolute top-0 left-0 text-white p-4 text-sm">1 / 3</div>
+          <img src="/Home/Img/slider-light-slide-1-1920x776.jpg" class="w-full object-cover h-screen">
+        </div>
+        
+        <div class="slide hidden w-full">
+          <div class="absolute top-0 left-0 text-white p-4 text-sm">2 / 3</div>
+          <img src="/Home/Img/slider-light-slide-2-1920x776.jpg" class="w-full object-cover h-screen">
+        </div>
+        
+        <div class="slide hidden w-full">
+          <div class="absolute top-0 left-0 text-white p-4 text-sm">3 / 3</div>
+          <img src="/Home/Img/slider-light-slide-3-1920x776.jpg" class="w-full object-cover h-screen">
+        </div>
+        
+        <button class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded hover:bg-opacity-75" onclick="plusSlides(-1)">❮</button>
+        <button class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded hover:bg-opacity-75" onclick="plusSlides(1)">❯</button>
+      </div>
+    </div>
+    
+    <!-- Dots -->
+    <div class="flex justify-center mt-4">
+      <span class="dot h-4 w-4 mx-1 bg-gray-400 rounded-full cursor-pointer" onclick="currentSlide(1)"></span>
+      <span class="dot h-4 w-4 mx-1 bg-gray-400 rounded-full cursor-pointer" onclick="currentSlide(2)"></span>
+      <span class="dot h-4 w-4 mx-1 bg-gray-400 rounded-full cursor-pointer" onclick="currentSlide(3)"></span>
+    </div>
+  </div>
+  
+ 
+  
+
+  <!------------------ Welcome to Melody Section------------------- -->
+<div class="flex flex-col md:flex-row items-center gap-10 p-8">
+    <img src="/Home/Img/large-features-3-570x368.jpg" alt="Welcome to Melody"
+        class="w-full md:w-1/2 rounded-lg shadow-lg"
+        data-aos="fade-right" data-aos-duration="1000">
+
+    <div class="md:w-1/2 space-y-4">
+        <h2 class="text-3xl font-bold text-gray-800" data-aos="fade-down" data-aos-duration="1000">Welcome to Melody!</h2>
+        <p class="text-gray-600" data-aos="fade-down" data-aos-duration="1000">
+            Melody Music School offers comprehensive musicianship through active learning for children and adults. Our
+            music educators are highly qualified and share a love of teaching.
+        </p>
+        <p class="text-gray-600" data-aos="fade-down" data-aos-duration="1000">
+            Our curriculum offers group experiences, private lessons, ensemble participation, theater, and camps. We
+            believe that learning music can be fun, and we believe in the effectiveness of learning in groups.
+        </p>
+        <button class="px-6 py-3 bg-[#c5a15b] hover:bg-[#6a5325] text-white font-semibold rounded-md transition duration-300"
+            data-aos="fade-down" data-aos-duration="1000">
+            Read More
+        </button>
+    </div>
+</div>
+
+<!-- ------------Music Classes------------ -->
+
+<div class="bg-[#f5f6fa] w-full mt-12 pb-12 text-center text-black">
+  <h1 class="py-10 text-3xl font-serif">Music Classes</h1>
+  
+  <!-- Instrument One -->
+  <div class="flex flex-wrap justify-center gap-6">
+      <div class="flex flex-col items-center p-6 max-w-xs">
+          <span class="material-symbols-outlined p-5 border border-gray-500 rounded-full text-[#c5a15b] hover:bg-[#c5a15b] hover:text-white transition-all" data-aos="fade-down" data-aos-duration="1000">
+              queue_music
+          </span>
+          <h3 class="mt-4 text-xl" data-aos="fade-down" data-aos-duration="2000">Piano</h3>
+          <p class="text-gray-600" data-aos="fade-down" data-aos-duration="2000">Want to learn to play piano? Our Piano Lessons are open to everyone.</p>
+      </div>
+      
+      <div class="flex flex-col items-center p-6 max-w-xs">
+          <i class="fa-solid fa-guitar p-5 border border-gray-500 rounded-full text-[#c5a15b] hover:bg-[#c5a15b] hover:text-white transition-all" data-aos="fade-down" data-aos-duration="1000"></i>
+          <h3 class="mt-4 text-xl" data-aos="fade-down" data-aos-duration="1500">Guitar</h3>
+          <p class="text-gray-600" data-aos="fade-down" data-aos-duration="1500">Learn to play the world’s popular instrument with our guitar classes.</p>
+      </div>
+
+      <div class="flex flex-col items-center p-6 max-w-xs">
+          <i class="fa fa-microphone p-5 border border-gray-500 rounded-full text-[#c5a15b] hover:bg-[#c5a15b] hover:text-white transition-all" data-aos="fade-down" data-aos-duration="1000"></i>
+          <h3 class="mt-4 text-xl" data-aos="fade-down" data-aos-duration="1500">Vocal</h3>
+          <p class="text-gray-600" data-aos="fade-down" data-aos-duration="1500">Melody offers a wide variety of vocal classes for all ages and skills.</p>
+      </div>
+  </div>
+  
+  <!-- Instrument Two -->
+  <div class="flex flex-wrap justify-center gap-6 mt-12">
+      <div class="flex flex-col items-center p-6 max-w-xs">
+          <span class="material-symbols-outlined p-5 border border-gray-500 rounded-full text-[#c5a15b] hover:bg-[#c5a15b] hover:text-white transition-all" data-aos="fade-down" data-aos-duration="2000">
+              queue_music
+          </span>
+          <h3 class="mt-4 text-xl" data-aos="fade-down" data-aos-duration="2000">Trumpet</h3>
+          <p class="text-gray-600" data-aos="fade-down" data-aos-duration="2000">We offer extensive trumpet learning program at our music school.</p>
+      </div>
+
+      <div class="flex flex-col items-center p-6 max-w-xs">
+          <i class="fas fa-sliders-h p-5 border border-gray-500 rounded-full text-[#c5a15b] hover:bg-[#c5a15b] hover:text-white transition-all" data-aos="fade-down" data-aos-duration="2000"></i>
+          <h3 class="mt-4 text-xl" data-aos="fade-down" data-aos-duration="2000">DJ</h3>
+          <p class="text-gray-600" data-aos="fade-down" data-aos-duration="2000">DJ music class provides in-depth knowledge and training for aspiring DJs.</p>
+      </div>
+
+      <div class="flex flex-col items-center p-6 max-w-xs">
+          <span class="material-symbols-outlined p-5 border border-gray-500 rounded-full text-[#c5a15b] hover:bg-[#c5a15b] hover:text-white transition-all" data-aos="fade-down" data-aos-duration="2000">
+              queue_music
+          </span>
+          <h3 class="mt-4 text-xl" data-aos="fade-down" data-aos-duration="2000">Hearing</h3>
+          <p class="text-gray-600" data-aos="fade-down" data-aos-duration="2000">Hearing curriculum at our School develops students’ aural skills.</p>
+      </div>
+  </div>
+</div>
+
+
+<!-- -----Music Group----- -->
+
+<div class="mt-12 text-center">
+  <h1 class="text-3xl font-serif" data-aos="fade-down" data-aos-duration="1500">Music Groups</h1>
+  <p class="mx-auto w-4/5 text-gray-400" data-aos="fade-down" data-aos-duration="2000" data-aos-delay="300">
+      Our music school offers a variety of groups to learn music and sharpen your skills. If you prefer private lessons, we have what to offer you and your children.
+  </p>
+
+  <div class="flex flex-wrap justify-center gap-6 mt-12 max-w-screen-lg mx-auto" data-aos="fade-right" data-aos-duration="2000">
+      <div class="text-center w-48">
+          <img src="/Home/Img/service-thumbnail-1-270x300.jpg" alt="" class="w-full h-auto rounded-lg shadow-md">
+          <h4 class="mt-2 text-lg text-gray-600">Kids</h4>
+      </div>
+
+      <div class="text-center w-48">
+          <img src="/Home/Img/service-thumbnail-2-270x300.jpg" alt="" class="w-full h-auto rounded-lg shadow-md">
+          <h4 class="mt-2 text-lg text-gray-600">Teens</h4>
+      </div>
+
+      <div class="text-center w-48">
+          <img src="/Home/Img/service-thumbnail-3-270x300.jpg" alt="" class="w-full h-auto rounded-lg shadow-md">
+          <h4 class="mt-2 text-lg text-gray-600">Adults</h4>
+      </div>
+
+      <div class="text-center w-48">
+          <img src="/Home/Img/service-thumbnail-4-270x300.jpg" alt="" class="w-full h-auto rounded-lg shadow-md">
+          <h4 class="mt-2 text-lg text-gray-600">Private Lessons</h4>
+      </div>
+  </div>
+</div>
+
+
+<!-- ------hero section------ -->
+<section class="relative w-11/12 mx-auto bg-cover bg-center text-white text-center py-24 mt-12" style="background-image: url('/Home/Img/parallax-cta.jpg');">
+  <div class="relative z-10 max-w-xl mx-auto">
+      <h1 class="text-4xl md:text-5xl font-serif mb-5">
+          Choose <i class="italic font-light">the Best</i> Time for Lessons
+      </h1>
+      <p class="text-base md:text-lg mb-6" data-aos="fade-down" data-aos-duration="1000">
+          Our students can select any time for their music lessons that fits their timetable, whether it’s a weekday evening or weekend morning.
+      </p>
+      <a href="#" class="inline-block px-6 py-3 bg-[#d4a953] text-white font-bold rounded-md transition duration-300 hover:bg-[#b38c45]" data-aos="fade-down" data-aos-duration="1500">
+          Learn More
+      </a>
+  </div>
+</section>
+
+<!-- ------Testimonial------ -->
+
+<section class="text-center py-12">
+  <h1 class="text-3xl font-serif text-black mb-8" data-aos="fade-down" data-aos-duration="1000">Testimonials</h1>
+
+  <div class="flex flex-wrap justify-center gap-8 max-w-screen-lg mx-auto">
+      <div class="max-w-xs p-6 text-left">
+          <div class="flex items-center gap-4">
+              <img src="/Home/Img/testimonials-person-1-96x96.jpg" alt="" class="w-16 h-16 rounded-full object-cover">
+              <h3 class="text-yellow-600 text-lg font-semibold">Harold Barnett</h3>
+          </div>
+          <p class="text-sm text-gray-500">Student, Hearing Class</p>
+          <p class="text-gray-600 mt-4">I'm not a seasoned musician but I have some experience in music. Your hearing classes have given me more confidence in identifying notes and chords. I'm very glad and recommend your lessons to everyone.</p>
+      </div>
+
+      <div class="max-w-xs p-6 text-left">
+          <div class="flex items-center gap-4">
+              <img src="/Home/Img/testimonials-person-2-96x96.jpg" alt="" class="w-16 h-16 rounded-full object-cover">
+              <h3 class="text-yellow-600 text-lg font-semibold">Albert Webb</h3>
+          </div>
+          <p class="text-sm text-gray-500">Student, Piano Class</p>
+          <p class="text-gray-600 mt-4">I began as an adult student that never had any musical training. Your teachers spent time to understand my objectives and even gave me one trial lesson. It became a great beginning of my piano class.</p>
+      </div>
+
+      <div class="max-w-xs p-6 text-left">
+          <div class="flex items-center gap-4">
+              <img src="/Home/Img/testimonials-person-3-96x96.jpg" alt="" class="w-16 h-16 rounded-full object-cover">
+              <h3 class="text-yellow-600 text-lg font-semibold">Kelly McMillan</h3>
+          </div>
+          <p class="text-sm text-gray-500">Student, Vocal Class</p>
+          <p class="text-gray-600 mt-4">I've learned so much with you. You don't simply observe and correct mistakes. The suggestions you make always have broader implications; you explain the detailed performance of a certain piece.</p>
+      </div>
+  </div>
+</section>
+
+
+<!-- -------fact-school----------- -->
+<div class="w-11/12 mx-auto text-center py-10 bg-cover bg-center" style="background-image: url('/Home/Img/parallax-counter.jpg');">
+  <h2 class="text-2xl md:text-3xl font-bold text-white font-serif mb-4">Some Facts About Our School</h2>
+  <p class="text-white text-lg mb-8 font-serif p-4">We have been helping people sharpen their skills since our foundation. <br>Below are just some facts and numbers from our history that will tell you more about us.</p>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 justify-center items-center">
+    <div class="text-center p-5">
+      <i class="fa-solid fa-trophy text-white text-2xl mb-3"></i>
+      <h3 id="awards-count" class="text-3xl text-white">0</h3>
+      <p class="text-white">International Awards</p>
+    </div>
+    <div class="text-center p-5">
+      <i class="fa-solid fa-music text-white text-2xl mb-3"></i>
+      <h3 id="students-count" class="text-3xl text-white">0</h3>
+      <p class="text-white">Satisfied Students</p>
+    </div>
+    <div class="text-center p-5">
+      <i class="fa-regular fa-star text-white text-2xl mb-3"></i>
+      <h3 id="experience-count" class="text-3xl text-white">0</h3>
+      <p class="text-white">Years of Experience</p>
+    </div>
+    <div class="text-center p-5">
+      <i class="fa-solid fa-user-group text-white text-2xl mb-3"></i>
+      <h3 id="teachers-count" class="text-3xl text-white">0</h3>
+      <p class="text-white">Qualified Teachers</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ------Our-Teacher---------- -->
+<div class="mt-24 text-center">
+  <h2 class="text-2xl font-bold text-black font-serif">Our Teachers</h2>
+  <div class="flex flex-wrap justify-center gap-8 mt-8">
+      <div class="w-60 p-5 text-center rounded-lg">
+          <img src="/Home/Img/team-1-270x273.jpg" alt="Nathalie Porter" class="rounded-lg w-full h-auto mb-4" />
+          <h3 class="text-lg font-semibold text-yellow-600">Nathalie Porter</h3>
+          <p class="text-gray-500">Founder, Vocal Teacher</p>
+      </div>
+      <div class="w-60 p-5 text-center rounded-lg">
+          <img src="/Home/Img/team-2-270x273.jpg" alt="John Thompson" class="rounded-lg w-full h-auto mb-4" />
+          <h3 class="text-lg font-semibold text-yellow-600">John Thompson</h3>
+          <p class="text-gray-500">DJ Classes Teacher</p>
+      </div>
+      <div class="w-60 p-5 text-center rounded-lg">
+          <img src="/Home/Img/team-3-270x273.jpg" alt="Mary Williams" class="rounded-lg w-full h-auto mb-4" />
+          <h3 class="text-lg font-semibold text-yellow-600">Mary Williams</h3>
+          <p class="text-gray-500">Trumpet Teacher</p>
+      </div>
+      <div class="w-60 p-5 text-center rounded-lg">
+          <img src="/Home/Img/team-4-270x273.jpg" alt="Sam Clarke" class="rounded-lg w-full h-auto mb-4" />
+          <h3 class="text-lg font-semibold text-yellow-600">Sam Clarke</h3>
+          <p class="text-gray-500">Guitar Teacher</p>
+      </div>
+  </div>
+</div>
+
+
+
+<!-- -------Get Started------ -->
+<div class="bg-[#6c757d] text-white text-center py-10 mt-12">
+  <i class="text-2xl font-serif block mb-4" data-aos="fade-right" data-aos-duration="1000">
+    Start Learning Your Favorite Instrument Right Now!
+  </i>
+  <button 
+    class="bg-[#d4a953] hover:bg-[#ab760ba2] text-white font-medium py-2 px-4 rounded-md text-lg transition duration-300" 
+    data-aos="fade-left" data-aos-duration="1000">
+    GET STARTED
+  </button>
+</div>
+
+<!-- ------------contact--------------- -->
+
+<div class="bg-gray-100 py-10">
+  <div class="max-w-lg mx-auto p-6 bg-white shadow-lg rounded-lg">
+    <h1 class="text-2xl font-serif text-center mb-6" data-aos="fade-up" data-aos-duration="1000">
+      Contact Us
+    </h1>
+
+    <form>
+      <!-- Name Fields -->
+      <div class="flex flex-col md:flex-row gap-6 mb-4" data-aos="fade-down" data-aos-duration="1000">
+        <div class="w-full">
+          <label for="first-name" class="block text-gray-700 mb-1">First Name</label>
+          <input type="text" id="first-name" name="first-name" required
+            class="w-full p-2 border border-gray-300 rounded-md focus:ring focus:ring-yellow-500">
+        </div>
+        <div class="w-full">
+          <label for="last-name" class="block text-gray-700 mb-1">Last Name</label>
+          <input type="text" id="last-name" name="last-name" required
+            class="w-full p-2 border border-gray-300 rounded-md focus:ring focus:ring-yellow-500">
+        </div>
+      </div>
+
+      <!-- Email & Phone -->
+      <div class="flex flex-col md:flex-row gap-6 mb-4" data-aos="fade-down" data-aos-duration="1000">
+        <div class="w-full">
+          <label for="email" class="block text-gray-700 mb-1">E-mail</label>
+          <input type="email" id="email" name="email" required
+            class="w-full p-2 border border-gray-300 rounded-md focus:ring focus:ring-yellow-500">
+        </div>
+        <div class="w-full">
+          <label for="phone" class="block text-gray-700 mb-1">Phone</label>
+          <input type="tel" id="phone" name="phone"
+            class="w-full p-2 border border-gray-300 rounded-md focus:ring focus:ring-yellow-500">
+        </div>
+      </div>
+
+      <!-- Message -->
+      <div class="mb-4" data-aos="fade-down" data-aos-duration="1000">
+        <label for="message" class="block text-gray-700 mb-1">Your Message</label>
+        <textarea id="message" name="message" required
+          class="w-full p-2 border border-gray-300 rounded-md h-24 resize-none focus:ring focus:ring-yellow-500"></textarea>
+      </div>
+
+      <!-- Buttons -->
+      <div class="flex flex-col md:flex-row items-center gap-4 mt-6">
+        <button type="submit"
+          class="bg-[#c5a15b] text-white py-2 px-6 rounded-md shadow-md hover:bg-[#6a5325] transition"
+          data-aos="fade-right" data-aos-duration="1000">
+          SEND MESSAGE
+        </button>
+
+        <h4 class="text-gray-500">or use</h4>
+        <a href="#" class="border border-gray-700 text-gray-700 py-2 px-6 rounded-md"
+          data-aos="fade-left" data-aos-duration="1000">
+          MESSENGER
+        </a>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- -----------Details of Contact--------- -->
+<div class="bg-white p-8 rounded-lg shadow-md w-11/12 max-w-4xl mx-auto mt-12 flex flex-col md:flex-row items-center md:justify-between space-y-6 md:space-y-0 md:space-x-12"
+  data-aos="fade-down" data-aos-duration="1500">
+
+  <!-- Phone -->
+  <div class="flex flex-col items-center text-center">
+    <i class="fa-solid fa-phone text-2xl text-blue-500"></i>
+    <div class="mt-2 text-gray-700">
+      <p>+1-800-1234-678</p>
+      <p>+1-800-9876-098</p>
+    </div>
+  </div>
+
+  <!-- Divider -->
+  <div class="hidden md:block w-px h-16 bg-yellow-600"></div>
+
+  <!-- Email -->
+  <div class="flex flex-col items-center text-center">
+    <i class="fa-solid fa-envelope text-2xl text-blue-500"></i>
+    <div class="mt-2 text-gray-700">
+      <p>info@demolink.org</p>
+    </div>
+  </div>
+
+  <!-- Divider -->
+  <div class="hidden md:block w-px h-16 bg-yellow-600"></div>
+
+  <!-- Location -->
+  <div class="flex flex-col items-center text-center">
+    <i class="fa-solid fa-location-dot text-2xl text-blue-500"></i>
+    <div class="mt-2 text-gray-700">
+      <p>2130 Fulton Street</p>
+      <p>San Diego, CA 94117-1080 USA</p>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- -----------Footer------------- -->
+<footer class="bg-[#6c757d] text-white py-10">
+  <div class="container mx-auto px-6">
+    <div class="flex flex-wrap justify-between gap-8">
+
+      <!-- About Us -->
+      <div class="w-full md:w-1/3">
+        <h3 class="text-lg font-serif text-gray-300 mb-4">About Us</h3>
+        <p class="text-gray-400 leading-relaxed">
+          Our music school was founded in 1999 to help students of all ages from all over the state to pursue their dream of becoming musicians. If you would like to learn how to play any musical instrument, our school is the place for you, regardless of your age and social status. We offer group and private lessons for children and adults.
+        </p>
+      </div>
+
+      <!-- Recent Blog Posts -->
+      <div class="w-full md:w-1/4">
+        <h3 class="text-lg font-serif text-gray-300 mb-4">Recent Blog Posts</h3>
+        <ul class="text-sm text-gray-400 space-y-4">
+          <li>
+            <a href="#" class="hover:text-white transition">
+              Traditional or Online Music School: Which One to Pick and Why
+            </a>
+          </li>
+          <li>
+            <a href="#" class="hover:text-white transition">
+              Are Grades Important for Getting into Music School?
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Gallery -->
+      <div class="w-full md:w-1/3">
+        <h3 class="text-lg font-serif text-gray-300 mb-4">Our Gallery</h3>
+        <div class="grid grid-cols-4 gap-2">
+          <img src="/Home/Img/footer-gallery-1-85x85.jpg" alt="Gallery Image" class="w-full h-auto">
+          <img src="/Home/Img/footer-gallery-2-85x85.jpg" alt="Gallery Image" class="w-full h-auto">
+          <img src="/Home/Img/footer-gallery-3-85x85.jpg" alt="Gallery Image" class="w-full h-auto">
+          <img src="/Home/Img/footer-gallery-4-85x85 (1).jpg" alt="Gallery Image" class="w-full h-auto">
+          <img src="/Home/Img/footer-gallery-5-85x85.jpg" alt="Gallery Image" class="w-full h-auto">
+          <img src="/Home/Img/footer-gallery-6-85x85.jpg" alt="Gallery Image" class="w-full h-auto">
+          <img src="/Home/Img/footer-gallery-7-85x85.jpg" alt="Gallery Image" class="w-full h-auto">
+          <img src="/Home/Img/footer-gallery-8-85x85.jpg" alt="Gallery Image" class="w-full h-auto">
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="border-t border-gray-500 mt-10 pt-6">
+      <nav class="flex flex-wrap justify-center gap-6 text-sm text-gray-300">
+        <a href="#" class="hover:text-white">HOME</a>
+        <a href="#" class="hover:text-white">ABOUT</a>
+        <a href="#" class="hover:text-white">CLASSES</a>
+        <a href="#" class="hover:text-white">GALLERY</a>
+        <a href="#" class="hover:text-white">BLOG</a>
+        <a href="#" class="hover:text-white">CONTACTS</a>
+      </nav>
+
+      <!-- Social Icons -->
+      <div class="flex justify-center space-x-6 mt-6">
+        <i class="fa-brands fa-facebook-f text-gray-400 hover:text-white text-xl transition"></i>
+        <i class="fa-brands fa-twitter text-gray-400 hover:text-white text-xl transition"></i>
+        <i class="fa-brands fa-instagram text-gray-400 hover:text-white text-xl transition"></i>
+        <i class="fa-brands fa-google text-gray-400 hover:text-white text-xl transition"></i>
+        <i class="fa-brands fa-linkedin-in text-gray-400 hover:text-white text-xl transition"></i>
+      </div>
+
+      <!-- Footer Logo & Copyright -->
+      <div class="flex flex-wrap justify-between items-center mt-10 text-xs text-gray-400 px-6">
+        <img src="/Home/Img/logo-inverse-102x34.png" alt="Logo" class="w-24">
+        <p>© 2024 All Rights Reserved. Terms of Use and Privacy Policy</p>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+ <script>
+
+
+// ------------fact-school-------
+  // Facts Counter Animation
+  function animateCounter(id, target) {
+            let count = 0;
+            const interval = setInterval(() => {
+                count++;
+                document.getElementById(id).innerText = count;
+                if (count >= target) clearInterval(interval);
+            }, 50);
+        }
+
+        // Start Animations
+        window.onload = () => {
+            animateCounter('awards-count', 12);
+            animateCounter('students-count', 238);
+            animateCounter('experience-count', 19);
+            animateCounter('teachers-count', 54);
+        };
+
+// Dark Mode & Mobile Menu Toggle 
+
+  document.getElementById('dark-mode-btn').addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+  });
+
+  document.getElementById('menu-toggle').addEventListener('click', () => {
+    document.getElementById('nav').classList.toggle('hidden');
+  });
+
+  document.getElementById('menu-toggle2').addEventListener('click', () => {
+    document.getElementById('contactinfo').classList.toggle('hidden');
+  });
+
+
+//    JavaScript for Slider Functionality 
+
+    let slideIndex = 0;
+    showSlides();
+  
+    function showSlides() {
+      let slides = document.querySelectorAll(".slide");
+      let dots = document.querySelectorAll(".dot");
+      slides.forEach(slide => slide.classList.add("hidden"));
+      dots.forEach(dot => dot.classList.remove("bg-gray-700"));
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1 }
+      slides[slideIndex - 1].classList.remove("hidden");
+      dots[slideIndex - 1].classList.add("bg-gray-700");
+      setTimeout(showSlides, 4000);
+    }
+  
+    function plusSlides(n) {
+      slideIndex += n - 1;
+      showSlides();
+    }
+  
+    function currentSlide(n) {
+      slideIndex = n - 1;
+      showSlides();
+    }
+  
+ </script>
+
+
+<script>
+    AOS.init();
+  </script>
+</body>
+</html>
